@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /*all elements inhert box-sizing value from thier parent element*/
+}
+/* the root element is always html */
+html {
+  /*
+  font-size: 10px;
+   this makes each 1rem = 10px so,
+   whenever we change the pixels number here the whole style will change
+   */
+  // This defines wht 1rem is
+  font-size: 62.5%; /*Video 18*/
+}
+body {
+  box-sizing: border-box; /* make padding and the margin included in the spacifide width not added to the width */
+}

@@ -1,0 +1,157 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*all elements inhert box-sizing value from thier parent element*/ }
+
+/* the root element is always html */
+html {
+  /*
+  font-size: 10px;
+   this makes each 1rem = 10px so,
+   whenever we change the pixels number here the whole style will change
+   */
+  font-size: 62.5%;
+  /*Video 18*/ }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /* =30px */
+  box-sizing: border-box;
+  /* make padding and the margin included in the spacifide width not added to the width */ }
+
+.header {
+  height: 95vh;
+  /* 95% from the view height*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  /* clip the edge*/
+  position: relative;
+  /* this one herer to make the heder as a reference position to the div "logo-box" that is inside it, so the top and the left will count depending on the header class */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    /* center the box in the middel of the header*/
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* to fix the animation shacking*/
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    /*make span takes whole line -- 100% of the width -- */
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /*movment animation*/
+    animation-name: moveInLeft;
+    animation-duration: 3s; }
+  .heading-primary--sub {
+    display: block;
+    /*make span takes whole line */
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 3s; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.btn:link, .btn:visited {
+  /* to make the visited link same as unvisited link*/
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  /* make the transform 0.2 second*/
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* (x y blur colore)*/ }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /*increase the size of the element */
+    opacity: 0; }
+
+.btn:active {
+  /* active => on click*/
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn::after {
+  content: "";
+  /*::after always must have content */
+  display: inline-block;
+  /*becouse the btn inline-block */
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /*to put the after class behind the btn class  */
+  transition: all 0.4s; }
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+  /*to prevent the button from appear
+     before apllying the animation, because it alppy the 0% styles before the animation starts */ }
