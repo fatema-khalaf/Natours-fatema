@@ -17,63 +17,8 @@ html {
   /*Video 18*/ }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  /* =30px */
   box-sizing: border-box;
   /* make padding and the margin included in the spacifide width not added to the width */ }
-
-.header {
-  height: 95vh;
-  /* 95% from the view height*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  /* clip the edge*/
-  position: relative;
-  /* this one herer to make the heder as a reference position to the div "logo-box" that is inside it, so the top and the left will count depending on the header class */ }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    /* center the box in the middel of the header*/
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /* to fix the animation shacking*/
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    /*make span takes whole line -- 100% of the width -- */
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /*movment animation*/
-    animation-name: moveInLeft;
-    animation-duration: 3s; }
-  .heading-primary--sub {
-    display: block;
-    /*make span takes whole line */
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation-name: moveInRight;
-    animation-duration: 3s; }
 
 @keyframes moveInLeft {
   0% {
@@ -102,6 +47,39 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /* =30px */ }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* to fix the animation shacking*/
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    /*make span takes whole line -- 100% of the width -- */
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /*movment animation*/
+    animation-name: moveInLeft;
+    animation-duration: 3s; }
+  .heading-primary--sub {
+    display: block;
+    /*make span takes whole line */
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 3s; }
 
 .btn:link, .btn:visited {
   /* to make the visited link same as unvisited link*/
@@ -154,4 +132,56 @@ body {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
   /*to prevent the button from appear
-     before apllying the animation, because it alppy the 0% styles before the animation starts */ }
+       before apllying the animation, because it alppy the 0% styles before the animation starts */ }
+
+.header {
+  height: 95vh;
+  /* 95% from the view height*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  /* clip the edge*/
+  position: relative;
+  /* this one herer to make the heder as a reference position to the div "logo-box" that is inside it, so the top and the left will count depending on the header class */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    /* center the box in the middel of the header*/
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc( (100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }

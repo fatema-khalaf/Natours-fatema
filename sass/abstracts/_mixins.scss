@@ -1,0 +1,8 @@
+// a standerd code to add height to a div after assign float properety to its child div
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both; // means clear both float right and left
+  }
+}
