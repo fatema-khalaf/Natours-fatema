@@ -1,0 +1,35 @@
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+    // making photos up eachother
+    position: absolute; //we shold make the parent "position: relative;" to be the referance
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+    &:hover {
+      border-radius: 0px;
+      outline: 1.5rem solid $color-primary; // outline is the same as border but with more options
+      transform: scale(1.05) translateY(-0.5rem); // make it bigger and move it up
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 20; // needs to assign z-index to all photos then make this one has a heigher number
+    }
+  }
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
