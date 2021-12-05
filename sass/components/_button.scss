@@ -9,7 +9,7 @@
     border-radius: 10rem;
     transition: all 0.2s; /* make the transform 0.2 second*/
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
   &:hover {
     transform: translateY(-3px);
@@ -48,5 +48,27 @@
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards; /*to prevent the button from appear
        before apllying the animation, because it alppy the 0% styles before the animation starts */
+  }
+}
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block; // this is essential to make padding and margin work
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all 0.2s;
+  }
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px); // move up
+  }
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0); // move up
   }
 }
