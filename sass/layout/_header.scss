@@ -8,6 +8,7 @@
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); /* clip the edge*/
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); /* clip the edge*/
   position: relative; /* this one herer to make the heder as a reference position to the div "logo-box" that is inside it, so the top and the left will count depending on the header class */
   &__logo-box {
