@@ -22,11 +22,37 @@
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); //add padding to a flote element
+    position: relative;
   }
   &__img {
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden; // remove the shake after the transform is done
+    transition: all 0.5s;
   }
   &__text {
     transform: skewX(12deg);
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; // remove the shake after the transform is done
+  }
+  // when hover the story do this to the __caption
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
   }
 }
