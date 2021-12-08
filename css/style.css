@@ -129,6 +129,7 @@ body {
 }
 
 .u-center-text {
+<<<<<<< HEAD
   text-align: center;
 }
 
@@ -151,6 +152,24 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem;
 }
+=======
+  text-align: center !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+>>>>>>> booking-section
 
 .section-about {
   background-color: #f7f7f7;
@@ -210,6 +229,7 @@ body {
 }
 
 .composition {
+<<<<<<< HEAD
   position: relative;
 }
 .composition__photo {
@@ -246,6 +266,36 @@ body {
 
 .btn:link,
 .btn:visited {
+=======
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+    position: absolute; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      border-radius: 0px;
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.btn, .btn:link, .btn:visited {
+>>>>>>> booking-section
   /* to make the visited link same as unvisited link*/
   text-decoration: none;
   text-transform: uppercase;
@@ -256,7 +306,12 @@ body {
   /* make the transform 0.2 second*/
   position: relative;
   font-size: 1.6rem;
+<<<<<<< HEAD
 }
+=======
+  border: none;
+  cursor: pointer; }
+>>>>>>> booking-section
 
 .btn:hover {
   transform: translateY(-3px);
@@ -269,8 +324,10 @@ body {
   opacity: 0;
 }
 
-.btn:active {
+.btn:active,
+.btn :focus {
   /* active => on click*/
+  outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
@@ -578,6 +635,7 @@ body {
   border-bottom: 3px solid transparent;
   width: 90%;
   display: block;
+<<<<<<< HEAD
 }
 .form__input:focus {
   outline: none;
@@ -590,6 +648,17 @@ body {
 .form__input::-webkit-input-placeholder {
   color: #999;
 }
+=======
+  transition: all 0.3s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #55c57a; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+>>>>>>> booking-section
 
 .form__label {
   font-size: 1.2rem;
@@ -605,6 +674,45 @@ body {
   visibility: hidden;
   transform: translateY(-4rem);
 }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -0.4rem;
+  left: 0; }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0;
+    transition: opacity 0.2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .header {
   height: 95vh;
