@@ -6,3 +6,9 @@
     clear: both; // means clear both float right and left
   }
 }
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
