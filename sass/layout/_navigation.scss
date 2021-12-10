@@ -11,6 +11,7 @@
     right: 6rem;
     border-radius: 50%;
     z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
   }
   &__background {
     height: 6rem;
@@ -24,15 +25,19 @@
       $color-primary-dark
     );
     z-index: 1000; //z-indes only works with position defind element
-    transform: scale(80);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    //transform: scale(80);
   }
   &__nav {
     height: 100vh;
-    width: 100%;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 1500;
+    // hide nav
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   &__list {
     position: absolute;
@@ -41,6 +46,7 @@
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
+    width: 100%;
   }
   &__item {
     margin: 1rem;
@@ -74,5 +80,12 @@
       background-position: 100%;
       color: $color-primary;
     }
+  }
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
   }
 }
