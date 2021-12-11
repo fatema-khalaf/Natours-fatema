@@ -632,7 +632,8 @@ body {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  overflow: scroll; }
   .popup__content {
     position: absolute;
     top: 50%;
