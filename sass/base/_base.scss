@@ -30,4 +30,9 @@ html {
 }
 body {
   box-sizing: border-box; /* make padding and the margin included in the spacifide width not added to the width */
+  padding: 3rem; /* =30px */
+  // width<900?
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
