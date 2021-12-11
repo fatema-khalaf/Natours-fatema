@@ -78,4 +78,38 @@
       color: $color-primary;
     }
   }
+  @include respond(tab-land) {
+    &__content {
+      width: 100%;
+    }
+  }
+  @include respond(tab-port) {
+    &__content {
+      @include absCenter;
+      width: 100%;
+      overflow: hidden;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.25);
+      transition: all 0.4s 0.2s;
+    }
+    &__left {
+      width: 100%;
+      display: inline-flex;
+      padding: 3rem 5rem;
+    }
+    &__right {
+      width: 100%;
+      display: inline-block;
+    }
+    &__img {
+      display: inline-block;
+      width: 50%;
+    }
+    &__text {
+      font-size: 1.4rem;
+      margin-bottom: 4rem;
+      -moz-column-count: 1;
+      column-count: 1;
+    }
+  }
 }
