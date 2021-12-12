@@ -162,7 +162,8 @@
     font-weight: 100;
   }
 
-  @include respond(tab-port) {
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25rem), only screen and (hover: none) {
     height: auto; // this to reassign the collapsed height because of absolute position
     border-radius: 3px;
     background-color: $color-white;
@@ -172,6 +173,7 @@
       height: auto;
       position: relative; // this also make the div fit content
       box-shadow: none;
+
       &--back {
         transform: rotateY(0deg);
         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
