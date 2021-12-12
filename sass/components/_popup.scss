@@ -97,6 +97,7 @@
       width: 100%;
       display: inline-flex;
       padding: 3rem 5rem;
+      margin-top: 5rem;
     }
     &__right {
       width: 100%;
@@ -111,6 +112,11 @@
       margin-bottom: 4rem;
       -moz-column-count: 1;
       column-count: 1;
+    }
+  }
+  @include respond(tiny) {
+    &__left {
+      display: none;
     }
   }
 }

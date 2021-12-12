@@ -55,4 +55,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
       @content;
     }
   }
+  @if $breakpoint == tiny {
+    //450px
+    @media (max-width: 28.125em) {
+      @content;
+    }
+  }
 }

@@ -750,7 +750,8 @@ body {
     .popup__left {
       width: 100%;
       display: inline-flex;
-      padding: 3rem 5rem; }
+      padding: 3rem 5rem;
+      margin-top: 5rem; }
     .popup__right {
       width: 100%;
       display: inline-block; }
@@ -762,6 +763,9 @@ body {
       margin-bottom: 4rem;
       -moz-column-count: 1;
       column-count: 1; } }
+  @media (max-width: 28.125em) {
+    .popup__left {
+      display: none; } }
 
 .navigation__checkbox {
   display: none; }
