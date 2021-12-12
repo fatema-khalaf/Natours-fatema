@@ -897,15 +897,18 @@ body {
 .header {
   height: 95vh;
   /* 95% from the view height*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
+  position: relative;
+  /* this one herer to make the heder as a reference position to the div "logo-box" that is inside it, so the top and the left will count depending on the header class */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* clip the edge*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* clip the edge*/
-  position: relative;
-  /* this one herer to make the heder as a reference position to the div "logo-box" that is inside it, so the top and the left will count depending on the header class */ }
+  /* clip the edge*/ }
+  @media (min-ersolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
