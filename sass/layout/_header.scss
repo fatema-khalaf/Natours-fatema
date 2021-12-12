@@ -1,5 +1,5 @@
 .header {
-  height: 95vh; /* 95% from the view height*/
+  height: 85vh; /* 95% from the view height*/
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.801),
@@ -9,12 +9,21 @@
   background-size: cover;
   background-position: top;
   position: relative; /* this one herer to make the heder as a reference position to the div "logo-box" that is inside it, so the top and the left will count depending on the header class */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* clip the edge*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* clip the edge*/
-
-  //Video 68
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 75vh,
+      0 100%
+    ); /* clip the edge*/
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* clip the edge*/
+    height: 95vh; /* 95% from the view height*/
+  }
+  //Video 63
   // on high resolution screen
-  @media (min-ersolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media (min-ersolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.801),

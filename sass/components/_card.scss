@@ -11,6 +11,7 @@
     top: 0;
     left: 0;
     width: 100%; // to prevent absulote position fit content
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden; // to fix => the bg image is overflowing the border radius so it looks no more rounded.
