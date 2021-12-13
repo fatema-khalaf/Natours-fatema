@@ -8,3 +8,8 @@ Responsive Landing page developed using best practices and coding prencipals suc
 4. clean, maintainable and efficient code.
 5. robust, scalable and secure features
 6. test-driven development, continuous integration, refactoring and code standards.
+
+Improvments:
+
+1. Make all background images responsive in css file.
+2. Disable navigation links when they are invisible. (( done ))
